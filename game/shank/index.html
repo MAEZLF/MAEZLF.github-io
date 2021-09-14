@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>贪吃蛇</title>
+  <style>
+    body {
+      background-color: cornsilk;
+    }
+
+    #canvas {
+      border: 1px solid black;
+      background-color: cadetblue;
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="game_info">
+    <p>游戏规则：不能超出边界，头部不能撞到自己身体,键盘上下左右键控制蛇行动方向</p>
+    <p>游戏分数：<span id="grade">0</span></p>
+    <p>游戏状态：<span id="status">未开始</span></p>
+    <button id="operation">开始游戏</button>
+  </div>
+  <canvas id="canvas" width="900" height="700">
+    Your browser does not support Canvas
+  </canvas>
+
+  <script src="./js/index.js"></script>
+</body>
+
+</html>
