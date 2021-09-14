@@ -2,24 +2,25 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>周龙飞的博客</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="周龙飞的博客">
+  <title>canvas开发贪吃蛇游戏 | 周龙飞的博客</title>
+  <meta name="keywords" content=" canvas ">
+  <meta name="description" content="canvas开发贪吃蛇游戏 | 周龙飞的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="本章记录git提交代码托管平台流程   [toc]   一、安装gitgit官网 —- https:&#x2F;&#x2F;git-scm.com&#x2F; 下载好傻瓜式安装即可 安装好过后，再桌面任意空白区域右键，看到以下两个选项即为安装成功 一般都用第二个选项也就是 Git Bash Here，点击它会出现git控制台，就可以输入命令了 二、生成秘钥输入命令 ssh-keygen  即可生成秘钥和公钥，一般在c盘 用户">
+<meta name="description" content="本章记录canvas [toc]   游戏展示 点击这里查看效果 实现一、布局首先先把页面整体结构画出来，代码如下 html  &lt;div class&#x3D;&quot;game_info&quot;&gt;     &lt;p&gt;游戏规则：不能超出边界，头部不能撞到自己身体,键盘上下左右键控制蛇行动方向&lt;&#x2F;p&gt;     &lt;p&gt;游戏分数：&lt;span id&#x3D;&amp;quot">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git提交代码托管平台流程">
-<meta property="og:url" content="http://zlf.asia/2021/09/09/git%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81%E6%89%98%E7%AE%A1%E5%B9%B3%E5%8F%B0%E6%B5%81%E7%A8%8B/index.html">
+<meta property="og:title" content="canvas开发贪吃蛇游戏">
+<meta property="og:url" content="http://zlf.asia/2021/09/14/canvas%E5%BC%80%E5%8F%91%E8%B4%AA%E5%90%83%E8%9B%87%E6%B8%B8%E6%88%8F/index.html">
 <meta property="og:site_name" content="周龙飞的博客">
-<meta property="og:description" content="本章记录git提交代码托管平台流程   [toc]   一、安装gitgit官网 —- https:&#x2F;&#x2F;git-scm.com&#x2F; 下载好傻瓜式安装即可 安装好过后，再桌面任意空白区域右键，看到以下两个选项即为安装成功 一般都用第二个选项也就是 Git Bash Here，点击它会出现git控制台，就可以输入命令了 二、生成秘钥输入命令 ssh-keygen  即可生成秘钥和公钥，一般在c盘 用户">
+<meta property="og:description" content="本章记录canvas [toc]   游戏展示 点击这里查看效果 实现一、布局首先先把页面整体结构画出来，代码如下 html  &lt;div class&#x3D;&quot;game_info&quot;&gt;     &lt;p&gt;游戏规则：不能超出边界，头部不能撞到自己身体,键盘上下左右键控制蛇行动方向&lt;&#x2F;p&gt;     &lt;p&gt;游戏分数：&lt;span id&#x3D;&amp;quot">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://zlf.asia/img/article/1956296-20200609164954212-2012937525.gif">
-<meta property="article:published_time" content="2021-09-09T07:25:00.000Z">
-<meta property="article:modified_time" content="2021-09-14T08:42:48.949Z">
+<meta property="og:image" content="http://zlf.asia/img/article/shank.gif">
+<meta property="og:image" content="http://zlf.asia/img/article/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20210914171321.png">
+<meta property="article:published_time" content="2021-09-14T09:04:00.000Z">
+<meta property="article:modified_time" content="2021-09-14T09:15:45.566Z">
 <meta property="article:author" content="ZLF">
-<meta property="article:tag" content="git">
+<meta property="article:tag" content="canvas">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://zlf.asia/img/article/1956296-20200609164954212-2012937525.gif">
+<meta name="twitter:image" content="http://zlf.asia/img/article/shank.gif">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -57,7 +58,7 @@
 
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/"
    class="avatar_target">
@@ -150,7 +151,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="6">
-<input type="hidden" id="yelog_site_word_count" value="1.9k">
+<input type="hidden" id="yelog_site_word_count" value="2k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -223,6 +224,30 @@
     <nav id="title-list-nav">
         
         <a  class="全部文章 前端 "
+           href="/2021/09/14/canvas%E5%BC%80%E5%8F%91%E8%B4%AA%E5%90%83%E8%9B%87%E6%B8%B8%E6%88%8F/"
+           data-tag="canvas"
+           data-author="" >
+            <span class="post-title" title="canvas开发贪吃蛇游戏">canvas开发贪吃蛇游戏</span>
+            <span class="post-date" title="2021-09-14 17:04:00">2021/09/14</span>
+        </a>
+        
+        <a  class="全部文章 前端 "
+           href="/2021/09/10/canvas/"
+           data-tag="canvas"
+           data-author="" >
+            <span class="post-title" title="canvas">canvas</span>
+            <span class="post-date" title="2021-09-10 10:42:00">2021/09/10</span>
+        </a>
+        
+        <a  class="全部文章 前端 "
+           href="/2021/09/09/%E7%BC%96%E8%BE%91%E5%99%A8%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5%E7%A4%BA%E4%BE%8B%20-%20%E5%89%AF%E6%9C%AC/"
+           data-tag="编辑器"
+           data-author="" >
+            <span class="post-title" title="编辑器代码片段示例">编辑器代码片段示例</span>
+            <span class="post-date" title="2021-09-09 16:18:00">2021/09/09</span>
+        </a>
+        
+        <a  class="全部文章 前端 "
            href="/2021/09/09/git%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81%E6%89%98%E7%AE%A1%E5%B9%B3%E5%8F%B0%E6%B5%81%E7%A8%8B/"
            data-tag="git"
            data-author="" >
@@ -231,43 +256,19 @@
         </a>
         
         <a  class="全部文章 后端 "
+           href="/2021/09/09/Navicat%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/"
+           data-tag="Navicat"
+           data-author="" >
+            <span class="post-title" title="Navicat下载与安装">Navicat下载与安装</span>
+            <span class="post-date" title="2021-09-09 10:41:00">2021/09/09</span>
+        </a>
+        
+        <a  class="全部文章 后端 "
            href="/2021/09/08/Mysql%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/"
            data-tag="mysql"
            data-author="" >
             <span class="post-title" title="Mysql下载与安装">Mysql下载与安装</span>
             <span class="post-date" title="2021-09-08 17:30:00">2021/09/08</span>
-        </a>
-        
-        <a  class="全部文章 前端 "
-           href="/2020/09/10/canvas/"
-           data-tag="canvas"
-           data-author="" >
-            <span class="post-title" title="canvas">canvas</span>
-            <span class="post-date" title="2020-09-10 10:42:00">2020/09/10</span>
-        </a>
-        
-        <a  class="全部文章 前端 "
-           href="/2020/09/10/canvas%E5%BC%80%E5%8F%91%E8%B4%AA%E5%90%83%E8%9B%87%E6%B8%B8%E6%88%8F/"
-           data-tag="canvas"
-           data-author="" >
-            <span class="post-title" title="canvas开发贪吃蛇游戏">canvas开发贪吃蛇游戏</span>
-            <span class="post-date" title="2020-09-10 10:42:00">2020/09/10</span>
-        </a>
-        
-        <a  class="全部文章 前端 "
-           href="/2020/09/09/%E7%BC%96%E8%BE%91%E5%99%A8%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5%E7%A4%BA%E4%BE%8B%20-%20%E5%89%AF%E6%9C%AC/"
-           data-tag="编辑器"
-           data-author="" >
-            <span class="post-title" title="编辑器代码片段示例">编辑器代码片段示例</span>
-            <span class="post-date" title="2020-09-09 16:18:00">2020/09/09</span>
-        </a>
-        
-        <a  class="全部文章 后端 "
-           href="/2020/09/09/Navicat%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85/"
-           data-tag="Navicat"
-           data-author="" >
-            <span class="post-title" title="Navicat下载与安装">Navicat下载与安装</span>
-            <span class="post-date" title="2020-09-09 10:41:00">2020/09/09</span>
         </a>
         
         <div id="no-item-tips">
@@ -286,12 +287,60 @@
         </div>
     </div>
 </aside>
-<div id="post" class="index">
+<div id="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-canvas开发贪吃蛇游戏" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%91%A8%E9%BE%99%E9%A3%9E%E7%9A%84%E5%8D%9A%E5%AE%A2"><span class="toc-text">周龙飞的博客</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E8%AF%B4%E6%98%8E%EF%BC%9A"><span class="toc-text">功能说明：</span></a></li></ol></li></ol>
+        <h1 class="article-title">canvas开发贪吃蛇游戏</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="前端">前端</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color2">canvas</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2021-09-14 17:15:45'>2021-09-14 17:04</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:203</span>
+        
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E5%B1%95%E7%A4%BA"><span class="toc-text">游戏展示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0"><span class="toc-text">实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%B8%83%E5%B1%80"><span class="toc-text">一、布局</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#html"><span class="toc-text">html</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#css"><span class="toc-text">css</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -304,110 +353,53 @@
     }
 </style>
 </div>
-            <h1 id="周龙飞的博客"><a href="#周龙飞的博客" class="headerlink" title="周龙飞的博客"></a>周龙飞的博客</h1><p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p><strong>本站用于记录学习笔记</strong></p>
-<h2 id="功能说明："><a href="#功能说明：" class="headerlink" title="功能说明："></a>功能说明：</h2><ul>
-<li><p>搜索支持文章标题、分类、标签(#标签)</p>
-</li>
-<li><p>pad/手机等移动端适配</p>
-</li>
-<li><p>页面搜索框快捷键 </p>
-<table>
-<thead>
-<tr>
-<th>快捷键</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Esc</td>
-<td>1.如果输入框有内容，清除内容<br />2.如果输入框无内容，失去焦点</td>
-</tr>
-<tr>
-<td>i/I</td>
-<td>获取焦点</td>
-</tr>
-<tr>
-<td>方向下</td>
-<td>向下选择文章</td>
-</tr>
-<tr>
-<td>方向上</td>
-<td>向上选择文章</td>
-</tr>
-<tr>
-<td>回车</td>
-<td>打开当前选中的文章，若没有，则默认打开第一个</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>页面搜索框快速搜索</p>
-<table>
-<thead>
-<tr>
-<th>前缀</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>title</td>
-<td>模糊搜索title标题的文章</td>
-</tr>
-<tr>
-<td>#tag</td>
-<td>搜索tag标签文章</td>
-</tr>
-<tr>
-<td>in:text</td>
-<td>全局搜索所有文章中的text文字</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>页面全局快捷键</p>
-<table>
-<thead>
-<tr>
-<th align="left">快捷键</th>
-<th align="left">功能</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">s/S</td>
-<td align="left">全屏/取消全屏</td>
-</tr>
-<tr>
-<td align="left">w/W</td>
-<td align="left">打开/关闭文章目录</td>
-</tr>
-<tr>
-<td align="left">j/J</td>
-<td align="left">向下滑动</td>
-</tr>
-<tr>
-<td align="left">k/K</td>
-<td align="left">向上滑动</td>
-</tr>
-<tr>
-<td align="left">gg/GG</td>
-<td align="left">到最顶端</td>
-</tr>
-<tr>
-<td align="left">shift+G/g</td>
-<td align="left">到最下端</td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-<br>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>本章记录canvas</strong></p>
+<p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E5%B1%95%E7%A4%BA"><span class="toc-text">游戏展示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0"><span class="toc-text">实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%B8%83%E5%B1%80"><span class="toc-text">一、布局</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#html"><span class="toc-text">html</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#css"><span class="toc-text">css</span></a></li></ol></li></ol></li></ol></div></p>
 <br>
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+<h2 id="游戏展示"><a href="#游戏展示" class="headerlink" title="游戏展示"></a>游戏展示</h2><p><img src="/img/article/shank.gif"></p>
+<p>点击这里查看<a href="/game/shank/index.html">效果</a></p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="一、布局"><a href="#一、布局" class="headerlink" title="一、布局"></a>一、布局</h3><p>首先先把页面整体结构画出来，代码如下</p>
+<h4 id="html"><a href="#html" class="headerlink" title="html"></a>html</h4><pre><code>  &lt;div class=&quot;game_info&quot;&gt;
+    &lt;p&gt;游戏规则：不能超出边界，头部不能撞到自己身体,键盘上下左右键控制蛇行动方向&lt;/p&gt;
+    &lt;p&gt;游戏分数：&lt;span id=&quot;grade&quot;&gt;0&lt;/span&gt;&lt;/p&gt;
+    &lt;p&gt;游戏状态：&lt;span id=&quot;status&quot;&gt;未开始&lt;/span&gt;&lt;/p&gt;
+    &lt;button id=&quot;operation&quot;&gt;开始游戏&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;canvas id=&quot;canvas&quot; width=&quot;900&quot; height=&quot;700&quot;&gt;
+    Your browser does not support Canvas
+  &lt;/canvas&gt;
+</code></pre>
+<h4 id="css"><a href="#css" class="headerlink" title="css"></a>css</h4><pre><code>    body &#123;
+      background-color: cornsilk;
+    &#125;
+
+    #canvas &#123;
+      border: 1px solid black;
+      background-color: cadetblue;
+      margin-left: 50%;
+      transform: translateX(-50%);
+    &#125;
+</code></pre>
+<p>此时页面长这样</p>
+<p><img src="/img/article/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20210914171321.png"></p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2906021442@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
     <div id="comments">
     <!-- 来必力City版安装代码 -->
     <div id="lv-container" data-id="city" data-uid="MTAyMC81NDI2Ny8zMDczOA==">
@@ -433,6 +425,13 @@
 </div>
 
 
+
+
+    
+
+
+
+
     </div>
     <div class="copyright">
         <!-- <p class="footer-entry">
@@ -441,11 +440,11 @@
 <p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p> -->
 
     </div>
-</div>
-<div class="full-toc">
-    <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
 <a class="" id="rocket" ></a>
 
+    </div>
 </div>
 
 <div class="hide_box" onclick="dashangToggle()"></div>
