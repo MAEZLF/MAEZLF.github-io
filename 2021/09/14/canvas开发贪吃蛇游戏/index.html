@@ -13,14 +13,14 @@
 <meta property="og:site_name" content="周龙飞的博客">
 <meta property="og:description" content="本章记录canvas [toc]   游戏展示 点击这里查看效果 实现一、布局首先先把页面整体结构画出来，代码如下 html  &lt;div class&#x3D;&quot;game_info&quot;&gt;     &lt;p&gt;游戏规则：不能超出边界，头部不能撞到自己身体,键盘上下左右键控制蛇行动方向&lt;&#x2F;p&gt;     &lt;p&gt;游戏分数：&lt;span id&#x3D;&amp;quot">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://zlf.asia/img/article/shank.gif">
+<meta property="og:image" content="http://1.117.62.223:3030/upload/Gif/8c19eb60-153d-11ec-a8b2-3719e3e2254c.gif">
 <meta property="og:image" content="http://zlf.asia/img/article/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20210914171321.png">
 <meta property="article:published_time" content="2021-09-14T09:04:00.000Z">
-<meta property="article:modified_time" content="2021-09-14T09:15:45.566Z">
+<meta property="article:modified_time" content="2021-09-14T09:24:50.339Z">
 <meta property="article:author" content="ZLF">
 <meta property="article:tag" content="canvas">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://zlf.asia/img/article/shank.gif">
+<meta name="twitter:image" content="http://1.117.62.223:3030/upload/Gif/8c19eb60-153d-11ec-a8b2-3719e3e2254c.gif">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -151,7 +151,7 @@
     </div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="6">
-<input type="hidden" id="yelog_site_word_count" value="2k">
+<input type="hidden" id="yelog_site_word_count" value="2.1k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -316,12 +316,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-09-14 17:15:45'>2021-09-14 17:04</time>
+            发布时间 : <time class="date" title='最后更新: 2021-09-14 17:24:50'>2021-09-14 17:04</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:203</span>
+        <span>字数:219</span>
         
         
         
@@ -340,7 +340,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E5%B1%95%E7%A4%BA"><span class="toc-text">游戏展示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0"><span class="toc-text">实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%B8%83%E5%B1%80"><span class="toc-text">一、布局</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#html"><span class="toc-text">html</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#css"><span class="toc-text">css</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E5%B1%95%E7%A4%BA"><span class="toc-text">游戏展示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0"><span class="toc-text">实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%B8%83%E5%B1%80"><span class="toc-text">一、布局</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#html"><span class="toc-text">html</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#css"><span class="toc-text">css</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%BC%96%E5%86%99js"><span class="toc-text">二、编写js</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -357,10 +357,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong>本章记录canvas</strong></p>
-<p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E5%B1%95%E7%A4%BA"><span class="toc-text">游戏展示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0"><span class="toc-text">实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%B8%83%E5%B1%80"><span class="toc-text">一、布局</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#html"><span class="toc-text">html</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#css"><span class="toc-text">css</span></a></li></ol></li></ol></li></ol></div></p>
+<p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E5%B1%95%E7%A4%BA"><span class="toc-text">游戏展示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0"><span class="toc-text">实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%B8%83%E5%B1%80"><span class="toc-text">一、布局</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#html"><span class="toc-text">html</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#css"><span class="toc-text">css</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%BC%96%E5%86%99js"><span class="toc-text">二、编写js</span></a></li></ol></li></ol></div></p>
 <br>
 
-<h2 id="游戏展示"><a href="#游戏展示" class="headerlink" title="游戏展示"></a>游戏展示</h2><p><img src="/img/article/shank.gif"></p>
+<h2 id="游戏展示"><a href="#游戏展示" class="headerlink" title="游戏展示"></a>游戏展示</h2><p><img src="http://1.117.62.223:3030/upload/Gif/8c19eb60-153d-11ec-a8b2-3719e3e2254c.gif"></p>
 <p>点击这里查看<a href="/game/shank/index.html">效果</a></p>
 <h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="一、布局"><a href="#一、布局" class="headerlink" title="一、布局"></a>一、布局</h3><p>首先先把页面整体结构画出来，代码如下</p>
 <h4 id="html"><a href="#html" class="headerlink" title="html"></a>html</h4><pre><code>  &lt;div class=&quot;game_info&quot;&gt;
@@ -386,6 +386,7 @@
 </code></pre>
 <p>此时页面长这样</p>
 <p><img src="/img/article/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20210914171321.png"></p>
+<h3 id="二、编写js"><a href="#二、编写js" class="headerlink" title="二、编写js"></a>二、编写js</h3><p>canvas页面内容都是通过js来绘制的</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2906021442@qq.com </span>
