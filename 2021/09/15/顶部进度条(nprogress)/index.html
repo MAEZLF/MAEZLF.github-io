@@ -6,20 +6,24 @@
   <meta name="keywords" content=" nprogress ">
   <meta name="description" content="顶部进度条(nprogress) | 周龙飞的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="本章记录nprogress的使用 [toc]   效果图 安装yarn add nprogress  用法import NProgress from &#39;nprogress&#39; import &#39;nprogress&#x2F;nprogress.css&#39;  NProgress.configure(&amp;#123; showSpinner: false &amp;#125;)  export c">
+<meta name="description" content="本章介绍模块的优雅导入 [toc]   require.context 随着项目越来越大，业务需要越来越多，我们项目的目录层级也是非常的多。如果通过import分别引入文件，会很非常麻烦 这时我们就要用到 Webpack 中的require.context()方法，动态加载某个文件夹下的所有匹配到的文件  例子：  demo.js import request from &#39;@&#x2F;utils&#x2F;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="顶部进度条(nprogress)">
-<meta property="og:url" content="http://zlf.asia/2021/09/15/%E9%A1%B6%E9%83%A8%E8%BF%9B%E5%BA%A6%E6%9D%A1(nprogress)/index.html">
+<meta property="og:title" content="模块的优雅导入(require.context)">
+<meta property="og:url" content="http://zlf.asia/2021/09/15/%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BC%98%E9%9B%85%E5%AF%BC%E5%85%A5/index.html">
 <meta property="og:site_name" content="周龙飞的博客">
-<meta property="og:description" content="本章记录nprogress的使用 [toc]   效果图 安装yarn add nprogress  用法import NProgress from &#39;nprogress&#39; import &#39;nprogress&#x2F;nprogress.css&#39;  NProgress.configure(&amp;#123; showSpinner: false &amp;#125;)  export c">
+<meta property="og:description" content="本章介绍模块的优雅导入 [toc]   require.context 随着项目越来越大，业务需要越来越多，我们项目的目录层级也是非常的多。如果通过import分别引入文件，会很非常麻烦 这时我们就要用到 Webpack 中的require.context()方法，动态加载某个文件夹下的所有匹配到的文件  例子：  demo.js import request from &#39;@&#x2F;utils&#x2F;">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://zlf.asia/img/article/%E6%88%AA%E5%9B%BE12.gif">
-<meta property="article:published_time" content="2021-09-15T06:42:00.000Z">
-<meta property="article:modified_time" content="2021-09-15T06:48:46.899Z">
+<meta property="og:image" content="http://zlf.asia/img/article/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20210915152738.png">
+<meta property="og:image" content="http://zlf.asia/img/article/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20210915153422.png">
+<meta property="og:image" content="http://zlf.asia/img/article/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20210915153719.png">
+<meta property="og:image" content="http://zlf.asia/img/article/fd.png">
+<meta property="article:published_time" content="2021-09-15T07:20:00.000Z">
+<meta property="article:modified_time" content="2021-09-15T07:41:33.340Z">
 <meta property="article:author" content="ZLF">
-<meta property="article:tag" content="nprogress">
+<meta property="article:tag" content="vue">
+<meta property="article:tag" content="webpack">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://zlf.asia/img/article/%E6%88%AA%E5%9B%BE12.gif">
+<meta name="twitter:image" content="http://zlf.asia/img/article/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20210915152738.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -103,7 +107,7 @@
     <li>
         <div class="all active" data-rel="全部文章">全部文章
             
-                <small>(7)</small>
+                <small>(8)</small>
             
         </div>
     </li>
@@ -114,7 +118,7 @@
                     <div data-rel="前端">
                         
                         前端
-                        <small>(5)</small>
+                        <small>(6)</small>
                         
                     </div>
                     
@@ -149,8 +153,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="7">
-<input type="hidden" id="yelog_site_word_count" value="3.7k">
+<input type="hidden" id="yelog_site_posts_number" value="8">
+<input type="hidden" id="yelog_site_word_count" value="4.1k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -216,6 +220,14 @@
             </li>
         
             <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>vue</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>webpack</a>
+            </li>
+        
+            <li class="article-tag-list-item">
                 <i class="iconfont icon-tag"></i><a>编辑器</a>
             </li>
         
@@ -225,6 +237,14 @@
 
     
     <nav id="title-list-nav">
+        
+        <a  class="全部文章 前端 "
+           href="/2021/09/15/%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BC%98%E9%9B%85%E5%AF%BC%E5%85%A5/"
+           data-tag="vue,webpack"
+           data-author="" >
+            <span class="post-title" title="模块的优雅导入(require.context)">模块的优雅导入(require.context)</span>
+            <span class="post-date" title="2021-09-15 15:20:00">2021/09/15</span>
+        </a>
         
         <a  class="全部文章 前端 "
            href="/2021/09/15/%E9%A1%B6%E9%83%A8%E8%BF%9B%E5%BA%A6%E6%9D%A1(nprogress)/"
