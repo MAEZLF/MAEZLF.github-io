@@ -14,22 +14,23 @@ let foot_length = 1 // 食物数量
 let timer = null // 游戏定时器
 let speed = 150 // 游戏速度
 game_audio.loop = true // 背景音乐循环
+
 const write_gridding = () => { // 绘制网格
-  // for (let i = 0; i < cav_width; i += 10) {
-  //   ctx.lineWidth = 0.5
-  //   // 绘制y轴线条
-  //   ctx.beginPath()
-  //   ctx.moveTo(i, 0)
-  //   ctx.lineTo(i, cav_width)
-  //   ctx.closePath()
-  //   ctx.stroke()
-  //   // 绘制x轴线条
-  //   ctx.beginPath()
-  //   ctx.moveTo(0, i)
-  //   ctx.lineTo(cav_width, i)
-  //   ctx.closePath()
-  //   ctx.stroke()
-  // }
+  for (let i = 0; i < cav_width; i += 10) {
+    ctx.lineWidth = 0.5
+    // 绘制y轴线条
+    ctx.beginPath()
+    ctx.moveTo(i, 0)
+    ctx.lineTo(i, cav_width)
+    ctx.closePath()
+    ctx.stroke()
+    // 绘制x轴线条
+    ctx.beginPath()
+    ctx.moveTo(0, i)
+    ctx.lineTo(cav_width, i)
+    ctx.closePath()
+    ctx.stroke()
+  }
 }
 
 const getPoint = () => { // 获取食物坐标
