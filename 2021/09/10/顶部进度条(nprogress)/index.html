@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>canvas开发贪吃蛇游戏 | 周龙飞的博客</title>
-  <meta name="keywords" content=" canvas ">
-  <meta name="description" content="canvas开发贪吃蛇游戏 | 周龙飞的博客">
+  <title>顶部进度条(nprogress) | 周龙飞的博客</title>
+  <meta name="keywords" content=" nprogress ">
+  <meta name="description" content="顶部进度条(nprogress) | 周龙飞的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="本章记录canvas开发贪吃蛇游戏 [toc]   游戏展示 点击这里查看效果 实现一、布局首先先把页面整体结构画出来，代码如下 html  &lt;div class&#x3D;&quot;game_info&quot;&gt;     &lt;p&gt;游戏规则：不能超出边界，头部不能撞到自己身体,键盘上下左右键控制蛇行动方向&lt;&#x2F;p&gt;     &lt;p&gt;游戏分数：&lt;span i">
 <meta property="og:type" content="article">
@@ -302,9 +302,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-canvas开发贪吃蛇游戏" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-顶部进度条(nprogress)" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">canvas开发贪吃蛇游戏</h1>
+        <h1 class="article-title">顶部进度条(nprogress)</h1>
     
     <div class="article-meta">
         
@@ -322,19 +322,19 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color2">canvas</a>
+            <a class="color5">nprogress</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-09-15 11:26:04'>2021-09-14 17:04</time>
+            发布时间 : <time class="date" title='最后更新: 2021-09-15 14:40:18'>2021-09-10 10:42</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:1.8k</span>
+        <span>字数:68</span>
         
         
         
@@ -353,7 +353,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E5%B1%95%E7%A4%BA"><span class="toc-text">游戏展示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0"><span class="toc-text">实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%B8%83%E5%B1%80"><span class="toc-text">一、布局</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#html"><span class="toc-text">html</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#css"><span class="toc-text">css</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%BC%96%E5%86%99js"><span class="toc-text">二、编写js</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E7%94%BB%E7%AC%94-context"><span class="toc-text">准备画笔(context)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E7%94%BB%E5%B8%83%E5%AE%BD%E9%AB%98%E5%8F%8A%E7%BD%91%E6%A0%BC%E5%AE%BD%E5%BA%A6"><span class="toc-text">定义画布宽高及网格宽度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E7%BD%91%E6%A0%BC"><span class="toc-text">绘制网格</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E9%A3%9F%E7%89%A9"><span class="toc-text">绘制食物</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E8%9B%87"><span class="toc-text">绘制蛇</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%88%E6%9E%9C%E5%9B%BE"><span class="toc-text">效果图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%B3%95"><span class="toc-text">用法</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -369,295 +369,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>本章记录canvas开发贪吃蛇游戏</strong></p>
-<p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E5%B1%95%E7%A4%BA"><span class="toc-text">游戏展示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0"><span class="toc-text">实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%B8%83%E5%B1%80"><span class="toc-text">一、布局</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#html"><span class="toc-text">html</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#css"><span class="toc-text">css</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%BC%96%E5%86%99js"><span class="toc-text">二、编写js</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E7%94%BB%E7%AC%94-context"><span class="toc-text">准备画笔(context)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E7%94%BB%E5%B8%83%E5%AE%BD%E9%AB%98%E5%8F%8A%E7%BD%91%E6%A0%BC%E5%AE%BD%E5%BA%A6"><span class="toc-text">定义画布宽高及网格宽度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E7%BD%91%E6%A0%BC"><span class="toc-text">绘制网格</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E9%A3%9F%E7%89%A9"><span class="toc-text">绘制食物</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E8%9B%87"><span class="toc-text">绘制蛇</span></a></li></ol></li></ol></li></ol></div></p>
+        <p><strong>本章记录nprogress的使用</strong></p>
+<p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%88%E6%9E%9C%E5%9B%BE"><span class="toc-text">效果图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%B3%95"><span class="toc-text">用法</span></a></li></ol></div></p>
 <br>
 
-<h2 id="游戏展示"><a href="#游戏展示" class="headerlink" title="游戏展示"></a>游戏展示</h2><p><img src="http://1.117.62.223:3030/upload/Gif/8c19eb60-153d-11ec-a8b2-3719e3e2254c.gif"></p>
-<p>点击这里查看<a href="/game/shank/index.html">效果</a></p>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="一、布局"><a href="#一、布局" class="headerlink" title="一、布局"></a>一、布局</h3><p>首先先把页面整体结构画出来，代码如下</p>
-<h4 id="html"><a href="#html" class="headerlink" title="html"></a>html</h4><pre><code>  &lt;div class=&quot;game_info&quot;&gt;
-    &lt;p&gt;游戏规则：不能超出边界，头部不能撞到自己身体,键盘上下左右键控制蛇行动方向&lt;/p&gt;
-    &lt;p&gt;游戏分数：&lt;span id=&quot;grade&quot;&gt;0&lt;/span&gt;&lt;/p&gt;
-    &lt;p&gt;游戏状态：&lt;span id=&quot;status&quot;&gt;未开始&lt;/span&gt;&lt;/p&gt;
-    &lt;button id=&quot;operation&quot;&gt;开始游戏&lt;/button&gt;
-  &lt;/div&gt;
-  &lt;canvas id=&quot;canvas&quot; width=&quot;900&quot; height=&quot;700&quot;&gt;
-    Your browser does not support Canvas
-  &lt;/canvas&gt;
+<h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><p><img src="/img/article/%E6%88%AA%E5%9B%BE12.gif"></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><pre><code>yarn add nprogress
 </code></pre>
-<h4 id="css"><a href="#css" class="headerlink" title="css"></a>css</h4><pre><code>    body &#123;
-      background-color: cornsilk;
-    &#125;
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><pre><code>import NProgress from &#39;nprogress&#39;
+import &#39;nprogress/nprogress.css&#39;
 
-    #canvas &#123;
-      border: 1px solid black;
-      background-color: cadetblue;
-      margin-left: 50%;
-      transform: translateX(-50%);
-    &#125;
-</code></pre>
-<p>此时页面长这样</p>
-<p><img src="/img/article/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20210914171321.png"></p>
-<h3 id="二、编写js"><a href="#二、编写js" class="headerlink" title="二、编写js"></a>二、编写js</h3><p>canvas页面内容都是通过js来绘制的</p>
-<h4 id="准备画笔-context"><a href="#准备画笔-context" class="headerlink" title="准备画笔(context)"></a>准备画笔(context)</h4><pre><code>const ctx = canvas.getContext(&#39;2d&#39;)
-ctx.fillStyle = &#39;#000&#39; // 填充样式
-ctx.strokeStyle = &#39;#000&#39; // 边框样式
-</code></pre>
-<h4 id="定义画布宽高及网格宽度"><a href="#定义画布宽高及网格宽度" class="headerlink" title="定义画布宽高及网格宽度"></a>定义画布宽高及网格宽度</h4><pre><code>const cav_width = 900 // 画布宽
-const cav_height = 700 // 画布高
-const grid_width = 10 // 网格宽度 &amp; 蛇身宽高
-</code></pre>
-<h4 id="绘制网格"><a href="#绘制网格" class="headerlink" title="绘制网格"></a>绘制网格</h4><pre><code>const write_gridding = () =&gt; &#123; // 绘制网格
-  for (let i = 0; i &lt; cav_width; i += 10) &#123;
-    ctx.lineWidth = 0.5
-    // 绘制y轴线条
-    ctx.beginPath()
-    ctx.moveTo(i, 0)
-    ctx.lineTo(i, cav_width)
-    ctx.closePath()
-    ctx.stroke()
-    // 绘制x轴线条
-    ctx.beginPath()
-    ctx.moveTo(0, i)
-    ctx.lineTo(cav_width, i)
-    ctx.closePath()
-    ctx.stroke()
-  &#125;
-&#125;
-</code></pre>
-<p>此时画布铺满了网格</p>
-<p><img src="/img/article/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20210915103519.png"></p>
-<h4 id="绘制食物"><a href="#绘制食物" class="headerlink" title="绘制食物"></a>绘制食物</h4><p>定义一个食物坐标以及食物数量变量</p>
-<pre><code>let point = [] // 食物坐标
-let foot_length = 1 // 食物数量
-</code></pre>
-<p>食物坐标是随机出现的，得通过随机数获取食物坐标</p>
-<p>再什么情况下获取坐标呢？</p>
-<p>是在食物数量少于我们定义的食物数量变量的时候</p>
-<pre><code>const getPoint = () =&gt; &#123; // 获取食物坐标
-  const i = foot_length - point.length
-  if (i) &#123;
-    Array(i).fill(null).forEach(item =&gt; &#123;
-      const px = &#123;
-        x: Math.floor(Math.random() * (cav_width / grid_width)) * grid_width,
-        y: Math.floor(Math.random() * (cav_height / grid_width)) * grid_width
-      &#125;
-      point.push(px)
-    &#125;)
-  &#125;
-&#125;
-</code></pre>
-<p>坐标准备好了，开始绘制食物</p>
-<pre><code>const setPoint = () =&gt; &#123; // 绘制食物
-  ctx.fillStyle = &#39;greenyellow&#39;
-  ctx.beginPath()
-  point.forEach(item =&gt; &#123;
-    ctx.fillRect(item.x, item.y, grid_width, grid_width)
-  &#125;)
-  ctx.closePath()
-&#125;
-</code></pre>
-<p>食物有了，现在还差我们主角</p>
-<h4 id="绘制蛇"><a href="#绘制蛇" class="headerlink" title="绘制蛇"></a>绘制蛇</h4><p>绘制蛇其实很简单，只需要准备一个数组，来控制蛇身的每一个位置</p>
-<p>创建一个蛇（Snake）类</p>
-<pre><code>class Snake &#123; // 创建一个蛇类
-  
-&#125;
-</code></pre>
-<p>接下来我们蛇的所有逻辑都写再这个类里面</p>
-<p>初始化</p>
-<pre><code>  init() &#123; // 初始化
-    this.snake_coordinates = [&#123; x: 20, y: 0 &#125;, &#123; x: 10, y: 0 &#125;, &#123; x: 0, y: 0 &#125;] // 蛇初始化坐标
-    speed = 150 // 游戏速度
-    foot_length = 1
-    point = []
-    this.currOri = &#39;right&#39; // 当前方向
-    return this
-  &#125;
-</code></pre>
-<p>开始绘制</p>
-<pre><code>  create() &#123; // 绘制蛇
-    ctx.fillStyle = &#39;orange&#39;
-    ctx.beginPath()
-    ctx.arc(this.snake_coordinates[0].x + grid_width / 2, this.snake_coordinates[0].y + grid_width / 2, grid_width / 2, 0, 360 * (Math.PI / 180))
-    this.snake_coordinates.slice(1).forEach(item =&gt; &#123;
-      // ctx.arc(item.x + grid_width / 2, item.y + grid_width / 2, grid_width / 2, 0, 360 * (Math.PI / 180))  // 圆形身体
-      ctx.fillRect(item.x, item.y, grid_width, grid_width)  // 方形身体
-    &#125;)
-    ctx.closePath()
-    ctx.fill()
-  &#125;
-</code></pre>
-<p>目前，蛇、食物都出现再了画布上，现在要做的就是让蛇动起来</p>
-<p>上下左右移动</p>
-<pre><code>  right() &#123; // 右移动
-    const pre = this.snake_coordinates[0]
-    this.snake_coordinates[0] = &#123; x: pre.x + grid_width, y: pre.y &#125;
-    this.move(pre)
-  &#125;
+NProgress.configure(&#123; showSpinner: false &#125;)
 
-  bottom() &#123; // 下移动
-    const pre = this.snake_coordinates[0]
-    this.snake_coordinates[0] = &#123; x: pre.x, y: pre.y + grid_width &#125;
-    this.move(pre)
-  &#125;
-
-  left() &#123; // 左移动
-    const pre = this.snake_coordinates[0]
-    this.snake_coordinates[0] = &#123; x: pre.x - grid_width, y: pre.y &#125;
-    this.move(pre)
-  &#125;
-
-  top() &#123; // 上移动
-    const pre = this.snake_coordinates[0]
-    this.snake_coordinates[0] = &#123; x: pre.x, y: pre.y - grid_width &#125;
-    this.move(pre)
-  &#125;
+export const open = () =&gt; NProgress.start()
+export const close = () =&gt; NProgress.done()
 </code></pre>
-<p>控制方向，移动过程中是有不可逆方向的，比如蛇往右走，这时是不能往左走的</p>
-<p>定义变量</p>
-<pre><code>  constructor() &#123;
-    this.direction = [&#39;left&#39;, &#39;right&#39;, &#39;top&#39;, &#39;bottom&#39;] // 可变的方向
-    this.no_rever_direction = [[&#39;left&#39;, &#39;right&#39;], [&#39;top&#39;, &#39;bottom&#39;]] // 不可逆方向
-  &#125;
-</code></pre>
-<p>处理方向</p>
-<pre><code>//键盘监听
-window.onkeyup = function (e) &#123;
-  let ori;
-  switch (e.keyCode) &#123;
-    case 37:
-      ori = &#39;left&#39;
-      break;
-    case 39:
-      ori = &#39;right&#39;
-      break;
-    case 38:
-      ori = &#39;top&#39;
-      break;
-    case 40:
-      ori = &#39;bottom&#39;
-      break;
-  &#125;
-  o_snake.changeOri(ori)
+<p>修改进度条颜色</p>
+<pre><code>#nprogress .bar &#123;
+  background: red !important; //颜色可修改
 &#125;
 </code></pre>
-<pre><code>  changeOri(ori) &#123; // 改变方向
-    if (ori === this.currOri) return // 如果要改变的方向和当前方向相同，则不操作
-    if (!this.direction.includes(ori)) return // 判断要改变的方向是否合法
-    if (!this.is_rever(ori)) return
-    this.currOri = ori
-  &#125;
-
-  is_rever(ori) &#123; // 判断方向是否为不可逆方向
-    const oris = this.no_rever_direction.find(item =&gt; item.includes(ori))
-    if (!oris.length) return true
-    if (oris.includes(ori) &amp;&amp; oris.includes(this.currOri)) return false
-    return true
-  &#125;
-</code></pre>
-<p>蛇已经可以移动了</p>
-<p>现在来处理蛇吃到食物后的逻辑</p>
-<pre><code>  add() &#123; // 添加身体
-    const last_snake = this.snake_coordinates[this.snake_coordinates.length - 1] // 倒数第一个身体
-    const last_two_snake = this.snake_coordinates[this.snake_coordinates.length - 1] // 倒数第二个身体
-    const x = last_snake.x - last_two_snake.x
-    const y = last_snake.y - last_two_snake.y
-    this.snake_coordinates.push(last_snake.x + x, last_snake.y + y)
-  &#125;
-</code></pre>
-<pre><code>  eat_point() &#123; // 判断蛇是否吃到食物
-    const index = point.findIndex(item =&gt; this.snake_coordinates[0].x === item.x &amp;&amp; this.snake_coordinates[0].y === item.y)
-    if (index !== -1) &#123;
-      this.add() // 添加身体
-      game_each.play()
-      ++document.getElementById(&#39;grade&#39;).innerHTML // 记录分数
-      const grade = document.getElementById(&#39;grade&#39;).innerText
-      foot_length = Math.ceil(grade / 10)
-      point[index].x = Math.floor(Math.random() * (cav_width / grid_width)) * grid_width
-      point[index].y = Math.floor(Math.random() * (cav_height / grid_width)) * grid_width
-      if (speed &gt; 50) &#123;
-        speed--
-        start()
-      &#125;
-    &#125;
-  &#125;
-</code></pre>
-<p>接下来处理游戏结束逻辑</p>
-<pre><code>  isWall() &#123; // 判断是否结束游戏
-    // 判断是否撞墙
-    const first = this.snake_coordinates[0]
-    const condition = [first.x &lt; 0, first.x &gt;= cav_width, first.y &lt; 0, first.y &gt;= cav_height]
-    if (condition.some(item =&gt; item)) &#123;
-      document.getElementById(&#39;operation&#39;).innerText = &#39;重新开始&#39;
-      game_status = 3
-      game_audio.pause()
-      game_end.play()
-      clearInterval(timer)
-    &#125;
-    // 判断是否撞到自己
-    const last = this.snake_coordinates[this.snake_coordinates.length - 1]
-    for (let i = 1; i &lt; this.snake_coordinates.length - 1; i++) &#123;
-      if (first.x === this.snake_coordinates[i].x &amp;&amp; first.y === this.snake_coordinates[i].y) &#123;
-        document.getElementById(&#39;operation&#39;).innerText = &#39;重新开始&#39;
-        game_status = 4
-        game_audio.pause()
-        game_end.play()
-        clearInterval(timer)
-        break;
-      &#125;
-    &#125;
-  &#125;
-</code></pre>
-<p>ok，整个蛇类就编写完成了</p>
-<p>现在蛇还是不能动的，需要添加一个定时器来控制整个游戏的流程</p>
-<p>代码如下</p>
-<pre><code>function start() &#123; // 开始游戏
-  clearInterval(timer)
-  timer = setInterval(() =&gt; &#123; // 游戏主循环
-    const status_text = &#123;
-      0: &#39;进行中&#39;,
-      1: &#39;游戏中&#39;,
-      2: &#39;暂停中&#39;,
-      3: &#39;游戏结束(撞墙)&#39;,
-      4: &#39;游戏结束(撞到自己)&#39;,
-    &#125;
-    eval(&#39;o_snake.&#39; + o_snake.currOri + &#39;()&#39;)
-    ctx.clearRect(0, 0, cav_width, cav_height); // 清屏
-    write_gridding() // 画轴
-    o_snake.create() // 画蛇
-    getPoint() // 获取食物坐标
-    setPoint() // 画食物
-    o_snake.eat_point() // 处理蛇吃到食物
-    o_snake.isWall() // 处理游戏结束
-    document.getElementById(&#39;status&#39;).innerText = status_text[game_status] // 设置游戏状态
-  &#125;, speed)
-&#125;
-</code></pre>
-<p>再给页面按钮添加点击事件，并设置游戏状态</p>
-<pre><code>document.getElementById(&#39;operation&#39;).onclick = function () &#123; // 控制游戏开始和暂停
-  if (game_status === 1) &#123;
-    game_status = 2
-    document.getElementById(&#39;status&#39;).innerText = &#39;暂停中&#39; // 因为有150的延迟所以手动设置
-    clearInterval(timer)
-    game_audio.pause()
-    this.innerHTML = &#39;继续&#39;
-    return
-  &#125; else if (game_status === 0) &#123;
-    this.innerHTML === &#39;开始游戏&#39;
-  &#125; else if (game_status === 3 || game_status === 4) &#123;
-    o_snake.init()
-    document.getElementById(&#39;grade&#39;).innerText = &#39;0&#39;
-  &#125;
-  game_status = 1
-  game_audio.play()
-  start()
-  this.innerHTML = &#39;暂停&#39;
-&#125;
-</code></pre>
-<p>已经完成整个项目</p>
-<p>项目已经部署到了gitee(码云)上,需要代码的小伙伴，请点击这里<a target="_blank" rel="noopener" href="https://gitee.com/zlf1914/snake.git">查看下载</a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2906021442@qq.com </span>

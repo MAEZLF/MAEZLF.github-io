@@ -6,18 +6,18 @@
   <meta name="keywords" content=" git ">
   <meta name="description" content="git提交代码托管平台流程 | 周龙飞的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="本章记录canvas [toc]   游戏展示 点击这里查看效果 实现一、布局首先先把页面整体结构画出来，代码如下 html  &lt;div class&#x3D;&quot;game_info&quot;&gt;     &lt;p&gt;游戏规则：不能超出边界，头部不能撞到自己身体,键盘上下左右键控制蛇行动方向&lt;&#x2F;p&gt;     &lt;p&gt;游戏分数：&lt;span id&#x3D;&amp;quot">
+<meta name="description" content="本章记录canvas开发贪吃蛇游戏 [toc]   游戏展示 点击这里查看效果 实现一、布局首先先把页面整体结构画出来，代码如下 html  &lt;div class&#x3D;&quot;game_info&quot;&gt;     &lt;p&gt;游戏规则：不能超出边界，头部不能撞到自己身体,键盘上下左右键控制蛇行动方向&lt;&#x2F;p&gt;     &lt;p&gt;游戏分数：&lt;span i">
 <meta property="og:type" content="article">
 <meta property="og:title" content="canvas开发贪吃蛇游戏">
 <meta property="og:url" content="http://zlf.asia/2021/09/14/canvas%E5%BC%80%E5%8F%91%E8%B4%AA%E5%90%83%E8%9B%87%E6%B8%B8%E6%88%8F/index.html">
 <meta property="og:site_name" content="周龙飞的博客">
-<meta property="og:description" content="本章记录canvas [toc]   游戏展示 点击这里查看效果 实现一、布局首先先把页面整体结构画出来，代码如下 html  &lt;div class&#x3D;&quot;game_info&quot;&gt;     &lt;p&gt;游戏规则：不能超出边界，头部不能撞到自己身体,键盘上下左右键控制蛇行动方向&lt;&#x2F;p&gt;     &lt;p&gt;游戏分数：&lt;span id&#x3D;&amp;quot">
+<meta property="og:description" content="本章记录canvas开发贪吃蛇游戏 [toc]   游戏展示 点击这里查看效果 实现一、布局首先先把页面整体结构画出来，代码如下 html  &lt;div class&#x3D;&quot;game_info&quot;&gt;     &lt;p&gt;游戏规则：不能超出边界，头部不能撞到自己身体,键盘上下左右键控制蛇行动方向&lt;&#x2F;p&gt;     &lt;p&gt;游戏分数：&lt;span i">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://1.117.62.223:3030/upload/Gif/8c19eb60-153d-11ec-a8b2-3719e3e2254c.gif">
 <meta property="og:image" content="http://zlf.asia/img/article/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20210914171321.png">
 <meta property="og:image" content="http://zlf.asia/img/article/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20210915103519.png">
 <meta property="article:published_time" content="2021-09-14T09:04:00.000Z">
-<meta property="article:modified_time" content="2021-09-15T03:10:47.187Z">
+<meta property="article:modified_time" content="2021-09-15T03:26:04.776Z">
 <meta property="article:author" content="ZLF">
 <meta property="article:tag" content="canvas">
 <meta name="twitter:card" content="summary">
@@ -105,7 +105,7 @@
     <li>
         <div class="all active" data-rel="全部文章">全部文章
             
-                <small>(6)</small>
+                <small>(7)</small>
             
         </div>
     </li>
@@ -116,7 +116,7 @@
                     <div data-rel="前端">
                         
                         前端
-                        <small>(4)</small>
+                        <small>(5)</small>
                         
                     </div>
                     
@@ -151,8 +151,8 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="6">
-<input type="hidden" id="yelog_site_word_count" value="3.6k">
+<input type="hidden" id="yelog_site_posts_number" value="7">
+<input type="hidden" id="yelog_site_word_count" value="3.7k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -214,6 +214,10 @@
             </li>
         
             <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>nprogress</a>
+            </li>
+        
+            <li class="article-tag-list-item">
                 <i class="iconfont icon-tag"></i><a>编辑器</a>
             </li>
         
@@ -233,10 +237,18 @@
         </a>
         
         <a  class="全部文章 前端 "
-           href="/2021/09/10/canvas/"
+           href="/2021/09/10/canvas%E7%BB%98%E5%88%B6%E5%9B%BE%E5%BD%A2/"
            data-tag="canvas"
            data-author="" >
             <span class="post-title" title="canvas">canvas</span>
+            <span class="post-date" title="2021-09-10 10:42:00">2021/09/10</span>
+        </a>
+        
+        <a  class="全部文章 前端 "
+           href="/2021/09/10/%E9%A1%B6%E9%83%A8%E8%BF%9B%E5%BA%A6%E6%9D%A1(nprogress)/"
+           data-tag="nprogress"
+           data-author="" >
+            <span class="post-title" title="顶部进度条(nprogress)">顶部进度条(nprogress)</span>
             <span class="post-date" title="2021-09-10 10:42:00">2021/09/10</span>
         </a>
         
@@ -317,12 +329,12 @@
     </div>
     <div class="article-meta">
         
-            发布时间 : <time class="date" title='最后更新: 2021-09-14 16:42:48'>2021-09-09 15:25</time>
+            发布时间 : <time class="date" title='最后更新: 2021-09-15 11:22:23'>2021-09-09 15:25</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:914</span>
+        <span>字数:924</span>
         
         
         
@@ -397,6 +409,7 @@ git config --global user.email [你的码云验证邮箱]
 git commit -m &#39;本次提交注释&#39;
 git push origin master //提交到主分支, 第一次提交可能会报错，报错使用下面命令
 git push -u origin master || git fetch origin master（master为远程仓库的分支名）
+git push -u origin master -f // 强制推送
 </code></pre>
 <p>第一次提交会让你回答两个问题，一直输入yes就行；</p>
 <p>这样就完成了一次提交了，以后只需要输入上面三条命令就可以提交了</p>
