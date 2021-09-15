@@ -6,22 +6,20 @@
   <meta name="keywords" content=" 编辑器 ">
   <meta name="description" content="编辑器代码片段示例 | 周龙飞的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="本章记录canvas开发贪吃蛇游戏 [toc]   游戏展示 点击这里查看效果 实现一、布局首先先把页面整体结构画出来，代码如下 html  &lt;div class&#x3D;&quot;game_info&quot;&gt;     &lt;p&gt;游戏规则：不能超出边界，头部不能撞到自己身体,键盘上下左右键控制蛇行动方向&lt;&#x2F;p&gt;     &lt;p&gt;游戏分数：&lt;span i">
+<meta name="description" content="本章记录nprogress的使用 [toc]   效果图 安装yarn add nprogress  用法import NProgress from &#39;nprogress&#39; import &#39;nprogress&#x2F;nprogress.css&#39;  NProgress.configure(&amp;#123; showSpinner: false &amp;#125;)  export c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="canvas开发贪吃蛇游戏">
-<meta property="og:url" content="http://zlf.asia/2021/09/14/canvas%E5%BC%80%E5%8F%91%E8%B4%AA%E5%90%83%E8%9B%87%E6%B8%B8%E6%88%8F/index.html">
+<meta property="og:title" content="顶部进度条(nprogress)">
+<meta property="og:url" content="http://zlf.asia/2021/09/15/%E9%A1%B6%E9%83%A8%E8%BF%9B%E5%BA%A6%E6%9D%A1(nprogress)/index.html">
 <meta property="og:site_name" content="周龙飞的博客">
-<meta property="og:description" content="本章记录canvas开发贪吃蛇游戏 [toc]   游戏展示 点击这里查看效果 实现一、布局首先先把页面整体结构画出来，代码如下 html  &lt;div class&#x3D;&quot;game_info&quot;&gt;     &lt;p&gt;游戏规则：不能超出边界，头部不能撞到自己身体,键盘上下左右键控制蛇行动方向&lt;&#x2F;p&gt;     &lt;p&gt;游戏分数：&lt;span i">
+<meta property="og:description" content="本章记录nprogress的使用 [toc]   效果图 安装yarn add nprogress  用法import NProgress from &#39;nprogress&#39; import &#39;nprogress&#x2F;nprogress.css&#39;  NProgress.configure(&amp;#123; showSpinner: false &amp;#125;)  export c">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://1.117.62.223:3030/upload/Gif/8c19eb60-153d-11ec-a8b2-3719e3e2254c.gif">
-<meta property="og:image" content="http://zlf.asia/img/article/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20210914171321.png">
-<meta property="og:image" content="http://zlf.asia/img/article/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20210915103519.png">
-<meta property="article:published_time" content="2021-09-14T09:04:00.000Z">
-<meta property="article:modified_time" content="2021-09-15T03:26:04.776Z">
+<meta property="og:image" content="http://zlf.asia/img/article/%E6%88%AA%E5%9B%BE12.gif">
+<meta property="article:published_time" content="2021-09-15T06:42:00.000Z">
+<meta property="article:modified_time" content="2021-09-15T06:48:46.899Z">
 <meta property="article:author" content="ZLF">
-<meta property="article:tag" content="canvas">
+<meta property="article:tag" content="nprogress">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://1.117.62.223:3030/upload/Gif/8c19eb60-153d-11ec-a8b2-3719e3e2254c.gif">
+<meta name="twitter:image" content="http://zlf.asia/img/article/%E6%88%AA%E5%9B%BE12.gif">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -229,6 +227,14 @@
     <nav id="title-list-nav">
         
         <a  class="全部文章 前端 "
+           href="/2021/09/15/%E9%A1%B6%E9%83%A8%E8%BF%9B%E5%BA%A6%E6%9D%A1(nprogress)/"
+           data-tag="nprogress"
+           data-author="" >
+            <span class="post-title" title="顶部进度条(nprogress)">顶部进度条(nprogress)</span>
+            <span class="post-date" title="2021-09-15 14:42:00">2021/09/15</span>
+        </a>
+        
+        <a  class="全部文章 前端 "
            href="/2021/09/14/canvas%E5%BC%80%E5%8F%91%E8%B4%AA%E5%90%83%E8%9B%87%E6%B8%B8%E6%88%8F/"
            data-tag="canvas"
            data-author="" >
@@ -241,14 +247,6 @@
            data-tag="canvas"
            data-author="" >
             <span class="post-title" title="canvas">canvas</span>
-            <span class="post-date" title="2021-09-10 10:42:00">2021/09/10</span>
-        </a>
-        
-        <a  class="全部文章 前端 "
-           href="/2021/09/10/%E9%A1%B6%E9%83%A8%E8%BF%9B%E5%BA%A6%E6%9D%A1(nprogress)/"
-           data-tag="nprogress"
-           data-author="" >
-            <span class="post-title" title="顶部进度条(nprogress)">顶部进度条(nprogress)</span>
             <span class="post-date" title="2021-09-10 10:42:00">2021/09/10</span>
         </a>
         
